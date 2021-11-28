@@ -22,5 +22,20 @@ document.addEventListener('DOMContentLoaded', function(event) {
 		}
 	}
 
-	console.log(computerPlay());
+	function playerPlay() {
+		let playerChoice = prompt("What is your choice?");
+		playerChoice = playerChoice.toLowerCase();
+
+		if(playerChoice == "rock" ||
+		   playerChoice == "paper" ||
+		   playerChoice == "scissors" ||
+		   playerChoice == "scissor") {
+			return playerChoice;
+		} else {
+			alert("Invalid Choice");
+		}
+	}
+	
+	console.log("Computer Choice: " + computerPlay());
+	console.log("Player Choice: " + playerPlay());
 });
