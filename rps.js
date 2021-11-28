@@ -8,13 +8,13 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
 		switch(randNum) {
 			case 1:
-				return "Rock";
+				return "rock";
 				break;
 			case 2:
-				return "Paper";
+				return "paper";
 				break;
 			case 3:
-				return "Scissors";
+				return "scissor";
 				break;
 			default:
 				return "None";
@@ -35,7 +35,39 @@ document.addEventListener('DOMContentLoaded', function(event) {
 			alert("Invalid Choice");
 		}
 	}
+
+	function playRound(playerChoiceIn, compChoiceIn) {
+		if(playerChoiceIn == "rock") {
+			if(compChoiceIn == "rock") {
+				return "tie";
+			}else if(compChoiceIn == "paper") {
+				return "computer wins";
+			} else if(compChoiceIn == "scissor") {
+				return "player wins";
+			}
+		} else if(playerChoiceIn == "paper") {
+			if(compChoiceIn == "rock") {
+				return "player wins";
+			} else if(compChoiceIn == "paper") {
+				return "tie";
+			} else if(compChoiceIn == "scissor") {
+				return "computer wins";
+			}
+		} else if(playerChoiceIn == "scissor" || playerChoiceIn == "scissors") {
+			if(compChoiceIn == "rock") {
+				return "computer wins";
+			} else if(compChoiceIn == "paper") {
+				return "player wins";
+			} else if(compChoiceIn == "scissor") {
+				return "tie";
+			}
+		}else {
+			return "ERROR - playRound function";
+		}
+	}
 	
-	console.log("Computer Choice: " + computerPlay());
-	console.log("Player Choice: " + playerPlay());
+	let playerChoice = playerPlay();
+	let computerChoice = computerPlay();
+
+	console.log(playRound(playerChoice, computerChoice));
 });
