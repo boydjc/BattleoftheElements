@@ -65,9 +65,42 @@ document.addEventListener('DOMContentLoaded', function(event) {
 			return "ERROR - playRound function";
 		}
 	}
-	
-	let playerChoice = playerPlay();
-	let computerChoice = computerPlay();
 
-	console.log(playRound(playerChoice, computerChoice));
+	function game() {
+		
+		let playerScore = 0;
+		let compScore = 0;
+
+		for(let i=0; i<5; i++) {
+			let playerChoice = playerPlay();
+			let computerChoice = computerPlay();
+			let winner = playRound(playerChoice, computerChoice);
+
+			console.log("Player Choice: " + playerChoice);
+			console.log("Computer Choice: " + computerChoice);
+
+			if(winner == "computer wins") {
+				compScore++;
+				console.log("Computer wins this round");
+			}else if(winner == "player wins") {
+				playerScore++;
+				console.log("Player wins this round");
+			}else{
+				console.log("This round is a tie.");
+			}
+		}
+
+		if(playerScore > compScore) {
+			console.log("Player Wins the Game!");
+		}else if(playerScore < compScore) {
+			console.log("Computer Wins the Game!");
+		}else{
+			console.log("The game is a tie.");
+		}
+
+		console.log("Player Score: " + playerScore);
+		console.log("Computer Score: " + compScore);
+	}
+
+	game();
 });
