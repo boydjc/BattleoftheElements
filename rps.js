@@ -28,6 +28,8 @@ document.addEventListener('DOMContentLoaded', function(event) {
 	function playRound(playerChoiceIn, compChoiceIn) {
 
 		let gameResult = document.querySelector('#gameResult');
+		let compScoreDiv = document.querySelector('#computerScore');
+		let playerScoreDiv = document.querySelector('#playerScore');
 
 		if(playerChoiceIn == "fire") {
 			if(compChoiceIn == "fire") {
