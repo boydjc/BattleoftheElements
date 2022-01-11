@@ -72,8 +72,12 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
 		if(computerScore >= 5) {
 			gameResult.innerHTML = "Computer wins the game!";
+			playerScore = 0;
+			computerScore = 0;
 		}else if(playerScore >= 5) {
 			gameResult.innerHTML = "Player wins the game!";
+			playerScore = 0;
+			computerScore = 0;
 		}
 
 	}
