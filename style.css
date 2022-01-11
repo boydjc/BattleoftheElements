@@ -66,11 +66,19 @@ body {
 	justify-content: space-around;
 }
 
+.scoreNormal {
+	background-color: #444;
+	color: #fff;
+}
+
+.scoreInvert {
+	background-color: #bbb;
+	color: #000;
+}
+
 #playerScore, #computerScore {
 	font-size: 22px;
 	text-align: center;
-	background-color: #444;
-	color: #fff;
 	padding: 10px;
 	border: 3px solid black;
 }
