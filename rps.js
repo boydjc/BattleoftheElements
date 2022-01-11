@@ -11,13 +11,13 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
 		switch(randNum) {
 			case 1:
-				return "rock";
+				return "fire";
 				break;
 			case 2:
-				return "paper";
+				return "water";
 				break;
 			case 3:
-				return "scissor";
+				return "leaf";
 				break;
 			default:
 				return "None";
@@ -29,34 +29,34 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
 		let gameResult = document.querySelector('#gameResult');
 
-		if(playerChoiceIn == "rock") {
-			if(compChoiceIn == "rock") {
+		if(playerChoiceIn == "fire") {
+			if(compChoiceIn == "fire") {
 				gameResult.innerHTML = "Game was a Tie.";
-			}else if(compChoiceIn == "paper") {
-				gameResult.innerHTML = "Paper beats rock. Computer wins this round!";
+			}else if(compChoiceIn == "water") {
+				gameResult.innerHTML = "Water beats fire. Computer wins this round!";
 				computerScore++;
-			} else if(compChoiceIn == "scissor") {
-				gameResult.innerHTML = "Rock beats scissors. Player wins this round!";
+			} else if(compChoiceIn == "leaf") {
+				gameResult.innerHTML = "Fire beats leaf. Player wins this round!";
 				playerScore++;
 			}
-		} else if(playerChoiceIn == "paper") {
-			if(compChoiceIn == "rock") {
-				gameResult.innerHTML = "Paper beats rock. Player wins this round";
+		} else if(playerChoiceIn == "water") {
+			if(compChoiceIn == "fire") {
+				gameResult.innerHTML = "Water beats fire. Player wins this round";
 				playerScore++;
-			} else if(compChoiceIn == "paper") {
+			} else if(compChoiceIn == "water") {
 				gameResult.innerHTML = "Game was a tie.";
-			} else if(compChoiceIn == "scissor") {
-				gameResult.innerHTML = "Scissor beats paper. Computer wins this round!";
+			} else if(compChoiceIn == "leaf") {
+				gameResult.innerHTML = "Leaf beats water. Computer wins this round!";
 				computerScore++;
 			}
-		} else if(playerChoiceIn == "scissor" || playerChoiceIn == "scissors") {
-			if(compChoiceIn == "rock") {
-				gameResult.innerHTML = "Rock beats scissors. Computer wins this round!";
+		} else if(playerChoiceIn == "leaf") {
+			if(compChoiceIn == "fire") {
+				gameResult.innerHTML = "Fire beats leaf. Computer wins this round!";
 				computerScore++;
-			} else if(compChoiceIn == "paper") {
-				gameResult.innerHTML = "Scissor beats paper. Player wins this round!";
+			} else if(compChoiceIn == "water") {
+				gameResult.innerHTML = "Leaf beats water. Player wins this round!";
 				playerScore++;
-			} else if(compChoiceIn == "scissor") {
+			} else if(compChoiceIn == "leaf") {
 				gameResult.innerHTML = "Game was a tie.";
 			}
 		}else {
@@ -83,23 +83,23 @@ document.addEventListener('DOMContentLoaded', function(event) {
 	}
 
 	// get the choice buttons
-	let rockButton = document.querySelector("#rockButton");
-	rockButton.addEventListener('click', (e) => {
-		let playerChoice = 'rock';
+	let fireChoice = document.querySelector("#fireChoice");
+	fireChoice.addEventListener('click', (e) => {
+		let playerChoice = 'fire';
 		let compChoice = computerPlay();
 		playRound(playerChoice, compChoice);
 	});
 
-	let paperButton = document.querySelector("#paperButton");
-	paperButton.addEventListener('click', (e) => {
-		let playerChoice = 'paper';
+	let waterChoice = document.querySelector("#waterChoice");
+	waterChoice.addEventListener('click', (e) => {
+		let playerChoice = 'water';
 		let compChoice = computerPlay();
 		playRound(playerChoice, compChoice);
 	});
 
-	let scissorButton = document.querySelector("#scissorButton");
-	scissorButton.addEventListener('click', (e) => {
-		let playerChoice = 'scissor';
+	let leafChoice = document.querySelector("#leafChoice");
+	leafChoice.addEventListener('click', (e) => {
+		let playerChoice = 'leaf';
 		let compChoice = computerPlay();
 		playRound(playerChoice, compChoice);
 	});
