@@ -11,6 +11,15 @@
 #choiceContainer {
 	width: 100%;
 	border: 2px solid red;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+}
+
+#choiceContainer div {
+	width: 225px;
+	height: 225px;
+	border: 2px solid black;
 }
 
 #resultContainer {
