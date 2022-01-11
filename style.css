@@ -1,3 +1,9 @@
+body {
+	display: flex;
+	flex-flow: column;
+	gap: 50px;
+}
+
 #header {
 	width: 100%;
 	border: 2px solid black;
@@ -27,14 +33,28 @@
 	border: 2px dashed green;
 }
 
+#resultContainer p {
+	font-size: 22px;
+	text-align: center;
+}	
+
 #scoreContainer {
 	width: 100;
 	border: 2px solid blue;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+}
+
+#playerScoreContainer p, #computerScoreContainer p {
+	font-size: 22px;
 }
 
 #footer {
 	width: 100%;
 	border: 2px dashed red;
+	text-align: center;
+	font-size: 16px;
 }
 
 
