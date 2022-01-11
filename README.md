@@ -1,2 +1,3 @@
-# RockPaperScissors
-Rock Paper Scissors application made for The Odin Project
+# Battle of the Elements
+Rock Paper Scissors like application made for The Odin Project
+
